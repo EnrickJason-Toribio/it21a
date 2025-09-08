@@ -16,6 +16,7 @@ rl.question("Enter your choice (1-3): ", choice =>{
     
     if(choice==="1"){
         console.log("Hello There!");
+        backToMenu();
     } else if (choice==="2"){
         computeFactorial();
 
@@ -47,7 +48,27 @@ console.log("Factorial");
 
                 console.log("The factorial of "+ num + " is " + fact);
             }
+            backToMenu();
         });
     }
-    
+
+function backToMenu(){
+    console.log("--------");
+    console.log("1. Back to menu");
+    console.log("2. Exit");
+
+    rl.question("What would you like to do next? (1-2): ", (backtoMenuChoice) => {
+        if(backtoMenuChoice ==="1"){
+            console.clear();
+            mainMenu();
+        } else if (backtoMenuChoice ==="2"){
+            console.log("Exiting program...Goodbye");
+            rl.close();
+        } else {
+            console.log("Invalid Choice. Please Try Again");
+            backToMenu();
+        }
+    })
+}
+
 mainMenu();
