@@ -5,7 +5,8 @@ const rl = readline.createInterface({
     output:process.stdout
 })
 
-console.log("Factorial Application");
+function mainMenu(){
+    console.log("Factorial Application");
 
 console.log("1. Say Hello");
 console.log("2. Compute Factorial");
@@ -40,6 +41,8 @@ rl.question("Enter your choice (1-3): ", choice =>{
         rl.close();
     } else {
         console.log("Invalid choice. Please Try Again");
+        mainMenu()
     }
 
 })
+}
